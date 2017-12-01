@@ -8,6 +8,11 @@ public class Profile {
     String firstName;
     String lastName;
 
+    public Profile() {
+        firstName = "Alan";
+        lastName = "Turing";
+    }
+
     public Profile(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
