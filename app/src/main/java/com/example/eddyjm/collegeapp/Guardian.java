@@ -4,29 +4,18 @@ package com.example.eddyjm.collegeapp;
  * Created by eddyjm on 11/27/2017.
  */
 
-public class Guardian {
-    String firstName;
-    String lastName;
+public class Guardian extends FamilyMember {
+    String occupation;
+
+    public Guardian() {
+        firstName = "Ada";
+        lastName = "Lovelace";
+        occupation = "Occupational Therapist";
+    }
 
     public Guardian(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }

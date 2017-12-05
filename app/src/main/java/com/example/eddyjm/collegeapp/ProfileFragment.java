@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class ProfileFragment extends Fragment {
     EditText mPEditLN;
     Profile mProfile = new Profile();
     Button mSubmitButton;
+    DatePicker DateButton;
 
     @Nullable
     @Override
@@ -37,6 +39,7 @@ public class ProfileFragment extends Fragment {
         mPFirstName.setText(mProfile.getFirstName());
         mPLastName.setText(mProfile.getLastName());
         mSubmitButton = (Button) rootView.findViewById(R.id.submit);
+        DateButton = (DatePicker) rootView.findViewById(R.id.dob);
 
         mSubmitButton.setOnClickListener(new View.OnClickListener(){
             @Override
