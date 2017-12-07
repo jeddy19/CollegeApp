@@ -11,6 +11,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 
 /**
  * Created by eddyjm on 11/27/2017.
@@ -24,7 +26,8 @@ public class ProfileFragment extends Fragment {
     EditText mPEditLN;
     Profile mProfile = new Profile();
     Button mSubmitButton;
-    DatePicker DateButton;
+    DatePicker dob;
+    Calendar calendar = Calendar.getInstance();
 
     @Nullable
     @Override
@@ -39,8 +42,9 @@ public class ProfileFragment extends Fragment {
         mPFirstName.setText(mProfile.getFirstName());
         mPLastName.setText(mProfile.getLastName());
         mSubmitButton = (Button) rootView.findViewById(R.id.submit);
-        DateButton = (DatePicker) rootView.findViewById(R.id.dob);
+        dob = (DatePicker) rootView.findViewById(R.id.dob);
 
+        dob.init(mProfile.getDob().get(Calendar.YEAR),mProfile.getDob().get(Calendar.MONTH),mProfile.getDob().get(Calendar.DAY_OF_MONTH), null);
         mSubmitButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -48,6 +52,14 @@ public class ProfileFragment extends Fragment {
                 mPLastName.setText(mPEditLN.getText());
                 mPEditFN.setText(" ");
                 mPEditLN.setText(" ");
+
+                int day = dob.getDayOfMonth();
+                int month = dob.getMonth();
+                int year = dob.getYear();
+
+                calendar.set(year, month, day);
+                mProfile.setDob(year, month, day);
+
             }
         });
 

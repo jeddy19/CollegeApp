@@ -1,5 +1,7 @@
 package com.example.eddyjm.collegeapp;
 
+import android.widget.DatePicker;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -12,13 +14,13 @@ import java.util.Date;
 public class Profile {
     String firstName;
     String lastName;
-    Date dob;
-    DateFormat df = new SimpleDateFormat("dd-MM-yy");
+    Calendar dob;
 
     public Profile() {
         firstName = "Alan";
         lastName = "Turing";
-        dob = df.format(dob);
+        dob = Calendar.getInstance();
+        dob.set(1999, 00, 01);
     }
 
     public Profile(String firstName, String lastName) {
@@ -40,5 +42,13 @@ public class Profile {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Calendar getDob() {
+        return dob;
+    }
+
+    public void setDob(int year, int month, int day) {
+        dob.set(year, month, day);
     }
 }

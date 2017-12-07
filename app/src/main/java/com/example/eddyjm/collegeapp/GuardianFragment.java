@@ -28,7 +28,7 @@ public class GuardianFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_family_member, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_guardian, container, false);
 
         mGFirstName = (TextView) rootView.findViewById(R.id.FirstName);
         mGLastName = (TextView) rootView.findViewById(R.id.LastName);
